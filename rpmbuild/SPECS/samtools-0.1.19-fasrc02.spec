@@ -81,7 +81,7 @@ SAM Tools provide various utilities for manipulating alignments in the SAM forma
 
 
 
-%define builddependencies zlib/1.2.8-fasrc03
+%define builddependencies zlib/1.2.8-fasrc05
 %define rundependencies %{builddependencies}
 %define buildcomments %{nil}
 %define requestor %{nil}

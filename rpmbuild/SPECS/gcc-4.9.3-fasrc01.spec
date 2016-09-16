@@ -75,7 +75,7 @@ Prefix: %{_prefix}
 %define mpi %(if [[ %{getenv:TYPE} == "MPI" ]]; then if [[ -n "%{getenv:FASRCSW_MPIS}" ]]; then echo "%{getenv:FASRCSW_MPIS}"; fi; else echo ""; fi)
 
 
-%define builddependencies gmp/6.0.0-fasrc01 mpfr/3.1.2-fasrc02 mpc/1.0.2-fasrc01 
+%define builddependencies gmp/6.0.0-fasrc01 mpfr/3.1.2-fasrc02 mpc/1.0.2-fasrc01 zlib/1.2.8-fasrc02 
 %define rundependencies %{builddependencies}
 %define buildcomments %{nil}
 %define requestor Gregory Green <ggreen@cfa.harvard.edu>

@@ -37,7 +37,8 @@ Summary: %{summary_static}
 # enter the url from where you got the source; change the archive suffix if 
 # applicable
 #
-URL: http://...FIXME...
+#URL: http://...FIXME...
+URL: https://hackage.haskell.org/package/cabal-install-1.20.0.3/cabal-install-1.20.0.3.tar.gz
 Source: %{name}-%{version}.tar.gz
 
 #
@@ -169,7 +170,7 @@ mkdir -p %{buildroot}/%{_prefix}
 sudo mkdir -p %{_prefix}
 sudo rmdir %{_prefix} || sudo rm %{_prefix}
 sudo ln -s %{buildroot}%{_prefix}  %{_prefix}
-sudo chown -R $USER:rc_admin $GHC_HOME/lib64/ghc-7.8.3/package.conf.d
+sudo chown -R $USER:administrators $GHC_HOME/lib64/ghc-7.8.3/package.conf.d
 ghc-pkg unregister Cabal-%{version} || :
 module load gmp/6.0.0-fasrc02
 PREFIX=%{_prefix} ./bootstrap.sh --global

@@ -30,15 +30,15 @@ Packager: %{getenv:FASRCSW_AUTHOR}
 # rpm gets created, so this stores it separately for later re-use); do not 
 # surround this string with quotes
 #
-%define summary_static The PCRE package contains Perl Compatible Regular Expression libraries.
+%define summary_static A processor for parsing, validating, serializing and manipulating XML, written in C++
 Summary: %{summary_static}
 
 #
 # enter the url from where you got the source; change the archive suffix if 
 # applicable
 #
-URL: ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.37.tar.bz2
-Source: %{name}-%{version}.tar.bz2
+URL: http://xerces.apache.org
+Source: %{name}-%{version}.tar.gz
 
 #
 # there should be no need to change the following
@@ -94,8 +94,7 @@ Prefix: %{_prefix}
 # NOTE! INDICATE IF THERE ARE CHANGES FROM THE NORM TO THE BUILD!
 #
 %description
-The PCRE package contains Perl Compatible Regular Expression libraries. These are useful for implementing regular expression pattern matching using the same syntax and semantics as Perl 5.
-This module has been built by Plamen G. Krastev.
+A processor for parsing, validating, serializing and manipulating XML, written in C++.
 
 #------------------- %%prep (~ tar xvf) ---------------------------------------
 
@@ -282,12 +281,12 @@ end
 
 
 ---- environment changes (uncomment what is relevant)
+--setenv("XERCES_HOME",       "%{_prefix}")
 prepend_path("PATH",               "%{_prefix}/bin")
 prepend_path("CPATH",              "%{_prefix}/include")
 prepend_path("FPATH",              "%{_prefix}/include")
 prepend_path("LD_LIBRARY_PATH",    "%{_prefix}/lib64")
 prepend_path("LIBRARY_PATH",       "%{_prefix}/lib64")
-prepend_path("MANPATH",            "%{_prefix}/share/man")
 prepend_path("PKG_CONFIG_PATH",    "%{_prefix}/lib64/pkgconfig")
 EOF
 

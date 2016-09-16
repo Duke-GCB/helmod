@@ -240,7 +240,7 @@ end
 prepend_path("PATH",                              "%{_prefix}/bin")
 prepend_path("PYTHONPATH",                        "%{_prefix}/lib/python2.7/site-packages")
 setenv("OMPI_MCA_btl_base_warn_component_unused", "0")
-setenv("RDP_JAR_PATH",                            "/n/sw/rdp_classifier_2.2/rdp_classifier-2.2.jar")
+setenv("RDP_JAR_PATH",                            "/nfs/software/rdp_classifier_2.2/rdp_classifier-2.2.jar")
 EOF
 
 #------------------- App data file

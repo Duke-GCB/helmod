@@ -7,9 +7,9 @@ modulename          : glib-2.20.4-fasrc01
 type                : Core
 compiler            : system
 mpi                 : 
-specauthor          : Plamen Krastev, Harvard FAS Research Computing <rchelp@fas.harvard.edu>
-builddate           : Thu Nov  5 10:44:12 EST 2015
-buildhost           : builds.rc.fas.harvard.edu
+specauthor          : Daniel Somers, Duke Center for Genomic and Computational Biology <gcb-help@duke.edu>
+builddate           : Fri Mar 18 13:34:24 EDT 2016
+buildhost           : rpmbuild-centos6.igsp.duke.edu
 buildhostversion    : 1
 builddependencies   : 
 rundependencies     : 

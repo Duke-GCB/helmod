@@ -86,8 +86,8 @@ FastQC is an application which takes a FastQ file and runs a series of tests on 
 %define builddependencies %{nil}
 %define rundependencies jdk/1.7.0_60-fasrc01
 %define buildcomments %{nil}
-%define requestor <pgorring@fas.harvard.edu>
-%define requestref RCRT:78764
+#%define requestor <pgorring@fas.harvard.edu>
+#%define requestref RCRT:78764
 
 # apptags
 # For aci-ref database use aci-ref-app-category and aci-ref-app-tag namespaces and separate tags with a semi-colon

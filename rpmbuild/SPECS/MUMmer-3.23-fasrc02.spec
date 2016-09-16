@@ -81,7 +81,7 @@ MUMmer is a system for rapidly aligning entire genomes, whether in complete or d
 
 
 
-%define builddependencies %{nil}
+%define builddependencies perl-modules/5.10.1-fasrc11 
 %define rundependencies %{builddependencies}
 %define buildcomments %{nil}
 %define requestor %{nil}
@@ -180,7 +180,7 @@ mkdir -p %{buildroot}/%{_prefix}
 
 # Substitute hardcoded paths
 for p in mapview mummerplot nucmer promer; do
-    sed -i -e 's?#!/usr/bin/perl?#!/usr/bin/env perl?' $p
+    sed -i -e 's?#!/nfs/software/helmod/apps/Core/perl/5.10.1-fasrc04/bin/perl?#!/usr/bin/env perl?' $p
     sed -i -e 's?my $SCRIPT_DIR.*?my $SCRIPT_DIR = "%{_prefix}/scripts";?' $p
     sed -i -e 's?my $BIN_DIR.*?my $BIN_DIR = "%{_prefix}";?' $p
     sed -i -e 's?my $AUX_BIN_DIR.*?my $AUX_BIN_DIR = "%{_prefix}/aux_bin";?' $p

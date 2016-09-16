@@ -7,9 +7,9 @@ modulename          : python-2.7.6-fasrc01
 type                : Core
 compiler            : system
 mpi                 : 
-specauthor          : Darren Boss, Harvard FAS Research Computing <rchelp@fas.harvard.edu>
-builddate           : Mon Sep 28 08:08:15 EDT 2015
-buildhost           : hardac-sm.genome.duke.edu
+specauthor          : Daniel Somers, Duke Center for Genomic and Computational Biology <gcb-help@duke.edu>
+builddate           : Wed Feb 10 13:56:28 EST 2016
+buildhost           : rpmbuild-centos6.igsp.duke.edu
 buildhostversion    : 1
 builddependencies   : 
 rundependencies     : Anaconda/1.9.2-fasrc01

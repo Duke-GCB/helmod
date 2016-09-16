@@ -73,7 +73,7 @@ Prefix: %{_prefix}
 %define mpi %(if [[ %{getenv:TYPE} == "MPI" ]]; then if [[ -n "%{getenv:FASRCSW_MPIS}" ]]; then echo "%{getenv:FASRCSW_MPIS}"; fi; else echo ""; fi)
 
 
-%define builddependencies %{nil}
+%define builddependencies gcc/4.8.2-fasrc01
 %define rundependencies %{builddependencies}
 %define buildcomments %{nil}
 %define requestor John L Pulice <jpulice@broadinstitute.org>

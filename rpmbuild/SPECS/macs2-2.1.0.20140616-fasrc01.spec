@@ -164,7 +164,8 @@ cd "$FASRCSW_DEV"/rpmbuild/BUILD/%{name}-%{version}
 #if you are okay with disordered output, add %%{?_smp_mflags} (with only one
 #percent sign) to build in parallel
 #make
-python setup.py build
+python setup_w_cython.py build
+
 
 
 

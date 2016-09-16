@@ -91,7 +91,7 @@ Text Boundaries: Locate the positions of words, sentences, paragraphs within a r
 
 
 
-%define builddependencies %{nil}
+%define builddependencies gcc/4.9.3-fasrc01
 %define rundependencies %{builddependencies}
 %define buildcomments Needed for SeqAn and KAT software
 %define requestor Shaokai Yu <shoukaiyu@hsph.harvard.edu>

@@ -138,7 +138,7 @@ cd $_
 
 ../configure --prefix=%{_prefix} --shared \
 	--with-netlib-lapack-tarfile="$FASRCSW_DEV"/rpmbuild/SOURCES/lapack-%{lapack_version}.tgz \
-	-b 64  -t 0  -Fa alg -fPIC  -D c -DPentiumCPS=2000
+	-b 64  -t -1  -Fa alg -fPIC  -D c -DPentiumCPS=2000
 
 
 #%%{?_smp_mflags} causes this to fail
