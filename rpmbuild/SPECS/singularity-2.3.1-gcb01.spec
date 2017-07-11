@@ -30,14 +30,14 @@ Packager: %{getenv:FASRCSW_AUTHOR}
 # rpm gets created, so this stores it separately for later re-use); do not 
 # surround this string with quotes
 #
-%define summary_static ...FIXME...
+%define summary_static Singularity creates and runs containers based on docker containers
 Summary: %{summary_static}
 
 #
 # enter the url from where you got the source; change the archive suffix if 
 # applicable
 #
-URL: http://...FIXME...
+URL: https://github.com/singularityware/singularity/releases/download/$VERSION/
 Source: %{name}-%{version}.tar.gz
 
 #
@@ -283,19 +283,20 @@ end
 ---- environment changes (uncomment what is relevant)
 --setenv("TEMPLATE_HOME",       "%{_prefix}")
 
---prepend_path("PATH",                "%{_prefix}/bin")
---prepend_path("CPATH",               "%{_prefix}/include")
---prepend_path("FPATH",               "%{_prefix}/include")
+prepend_path("PATH",                "%{_prefix}/bin")
+prepend_path("PATH",                "%{_prefix}/libexec/singularity/bin")
+prepend_path("CPATH",               "%{_prefix}/include")
+prepend_path("FPATH",               "%{_prefix}/include")
 --prepend_path("INFOPATH",            "%{_prefix}/info")
 --prepend_path("LD_LIBRARY_PATH",     "%{_prefix}/lib")
 --prepend_path("LIBRARY_PATH",        "%{_prefix}/lib")
---prepend_path("LD_LIBRARY_PATH",     "%{_prefix}/lib64")
---prepend_path("LIBRARY_PATH",        "%{_prefix}/lib64")
+prepend_path("LD_LIBRARY_PATH",     "%{_prefix}/lib64")
+prepend_path("LIBRARY_PATH",        "%{_prefix}/lib64")
 --prepend_path("MANPATH",             "%{_prefix}/man")
 --prepend_path("PKG_CONFIG_PATH",     "%{_prefix}/pkgconfig")
 --prepend_path("PATH",                "%{_prefix}/sbin")
 --prepend_path("INFOPATH",            "%{_prefix}/share/info")
---prepend_path("MANPATH",             "%{_prefix}/share/man")
+prepend_path("MANPATH",             "%{_prefix}/share/man")
 --prepend_path("PYTHONPATH",          "%{_prefix}/site-packages")
 EOF
 
@@ -331,6 +332,15 @@ EOF
 %{_prefix}/*
 
 
+# This specifies all possible singularity command permissions.
+# We can limit the singularity commands to shell, exec, test and run
+# by only providing the action-suid line.
+%attr(4755,root,root) %{_prefix}/libexec/singularity/bin/create-suid
+%attr(4755,root,root) %{_prefix}/libexec/singularity/bin/expand-suid
+%attr(4755,root,root) %{_prefix}/libexec/singularity/bin/mount-suid
+%attr(4755,root,root) %{_prefix}/libexec/singularity/bin/import-suid
+%attr(4755,root,root) %{_prefix}/libexec/singularity/bin/export-suid
+%attr(4755,root,root) %{_prefix}/libexec/singularity/bin/action-suid
 
 #------------------- scripts (there should be no need to change these) --------
 
