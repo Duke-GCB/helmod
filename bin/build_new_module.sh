@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Builds a module for a spec file that was added to the repo
+# Assumes that whatever SOURCE is required(if any) is already present locally
 set -e
 export NAME=$1
 export VERSION=$2
