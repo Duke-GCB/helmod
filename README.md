@@ -17,14 +17,15 @@ See the [rpmbuild/SPECS](rpmbuild/SPECS) directory for a bunch of real examples 
 ## GCB Specific Instructions
 Modules are built on the rpmbuild server. 
 New users will need to clone this repo and create a `BUILD` directory in `helmod/rpmbuild`.
+
 High Level Process
 - Setup environment variables for the module you want to build
 - Download the compressed source used to build the software into `rpmbuild/SOURCES/`
 - Copy the template.spec to a <modulename>-<version>-gcb<release>.spec file in `rpmbuild/SPECS`
-- run `make` in `rpmbuild/SPECS` editing the spec file as necessary. 
+- run `make`/`make install` in `rpmbuild/SPECS` editing the spec file as necessary. 
+- run `make post` which stores the output files in `/nfs/software/helmod/` on rpmbuild server.
 
-See the [HOWTO-short](doc/HOWTO-short.md) instructions for further details.
-When running make for building modules you are running the the helmod Makefile. The rpm spec file contains commands that will configure and make your source code.
+When running `make` for building modules you are running the the helmod Makefile. The rpm spec file contains commands that will configure and make your source code. See the [HOWTO-short](doc/HOWTO-short.md) instructions for further details.
 
 __NOTE__
 One additinal step that must be manually done is to sync the modules to our HARDAC cluster. This is done by running this command on the HARDAC xfer server: 
