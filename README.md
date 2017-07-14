@@ -22,10 +22,10 @@ High Level Process
 - Setup environment variables for the module you want to build
 - Download the compressed source used to build the software into `rpmbuild/SOURCES/`
 - Copy the template.spec to a <modulename>-<version>-gcb<release>.spec file in `rpmbuild/SPECS`
-- run `make`/`make install` in `rpmbuild/SPECS` editing the spec file as necessary. 
-- run `make post` which stores the output files in `/nfs/software/helmod/` on rpmbuild server.
+- run `make`/`make install` in `rpmbuild/SPECS` editing the spec file as necessary
+- run `make post` which stores the output files in `/nfs/software/helmod/` on rpmbuild server and commits the source code. `make sync` can be run to just store the output files in the global location.
 
-When running `make` for building modules you are running the the helmod Makefile. The rpm spec file contains commands that will configure and make your source code. See the [HOWTO-short](doc/HOWTO-short.md) instructions for further details.
+When running `make` for building modules you are running the the helmod Makefile. The rpm spec file contains commands that will configure and make your source code. If you do not wish to See the [HOWTO-short](doc/HOWTO-short.md) instructions for further details.
 
 __NOTE__
 One additinal step that must be manually done is to sync the modules to our HARDAC cluster. This is done by running this command on the HARDAC xfer server: 
