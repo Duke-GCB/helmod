@@ -160,6 +160,7 @@ cd "$FASRCSW_DEV"/rpmbuild/BUILD/%{name}-%{version}
 	--with-hwloc \
     --enable-mpi-java \
 	--with-slurm \
+        --with-verbs \
     --with-pmi
 
 #if you are okay with disordered output, add %%{?_smp_mflags} (with only one 
