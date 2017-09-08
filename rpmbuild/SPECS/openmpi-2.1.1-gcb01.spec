@@ -156,7 +156,6 @@ cd "$FASRCSW_DEV"/rpmbuild/BUILD/%{name}-%{version}
 	--infodir=%{_prefix}/share/info \
 	--enable-mpi-thread-multiple \
     --enable-static \
-    --enable-mpi-fortran=all \
 	--enable-mpi-cxx \
 	--with-hwloc \
     --enable-mpi-java \
