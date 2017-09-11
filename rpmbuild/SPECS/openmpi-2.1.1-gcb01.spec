@@ -37,7 +37,7 @@ Summary: %{summary_static}
 # enter the url from where you got the source; change the archive suffix if 
 # applicable
 #
-URL: https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.0.tar.gz
+URL: https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.1.tar.gz
 Source: %{name}-%{version}.tar.gz
 
 #
