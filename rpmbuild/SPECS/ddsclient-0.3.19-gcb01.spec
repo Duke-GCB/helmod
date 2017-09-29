@@ -326,3 +326,4 @@ test -d '%{_prefix}' && echo '%{_prefix}' | grep -q '%{name}.%{version}' && rmdi
 #
 echo '%{buildroot}' | grep -q 'rpmbuild' && rm -rf '%{buildroot}'
 #
+
