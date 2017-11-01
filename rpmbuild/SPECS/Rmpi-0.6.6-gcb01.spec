@@ -270,7 +270,6 @@ end
 
 
 ---- environment changes (uncomment what is relevant)
-setenv("R_PROFILE",             "%{_prefix}/Rmpi/Rprofile")
 prepend_path("R_LIBS_USER",         "%{_prefix}")
 EOF
 
