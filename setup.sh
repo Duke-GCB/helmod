@@ -16,12 +16,7 @@ export FASRCSW_BUILD_HOST=rpmbuild-centos6
 test "$(hostname -s)" != "$FASRCSW_BUILD_HOST" && echo "WARNING: the current host is not the canonical build host, $FASRCSW_BUILD_HOST" >&2
 
 #rpm packager credits
-<<<<<<< HEAD
-export FASRCSW_AUTHOR="$(getent passwd $USER | cut -d: -f5), Duke Center for Genomic and Computational Biology <gcb-help@duke.edu>"
-=======
 export FASRCSW_AUTHOR="$(getent passwd $USER | cut -d: -f5), Duke Center for Genomics and Computational Biology <gcb-help@duke.edu>"
->>>>>>> 8b43e6b03fc79f0363cb9a333ffdf28fe0e09d0d
-
 
 #--- environment setup
 
