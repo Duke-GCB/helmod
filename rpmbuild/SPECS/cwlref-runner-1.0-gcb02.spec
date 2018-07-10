@@ -134,8 +134,9 @@ echo %{buildroot} | grep -q %{name}-%{version} && rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_prefix}
 mkdir -p %{buildroot}/%{_prefix}/lib/python2.7/site-packages
 export PYTHONPATH=%{buildroot}/%{_prefix}/lib/python2.7/site-packages
-# ruamel.yaml change below was added to fix issue where ruamel.yaml 0.12.4 wouldn't import
-PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade 'ruamel.yaml>0.12.4,<0.15' cwlref-runner==%{version}
+PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade cwlref-runner==%{version}
+# ruamel.yaml change below was added to fix issue where ruamel.yaml wouldn't import
+touch $PYTHONPATH/ruamel/__init__.py
 #(this should not need to be changed)
 #these files are nice to have; %%doc is not as prefix-friendly as I would like
 #if there are other files not installed by make install, add them here
