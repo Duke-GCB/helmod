@@ -134,7 +134,7 @@ echo %{buildroot} | grep -q %{name}-%{version} && rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_prefix}
 mkdir -p %{buildroot}/%{_prefix}/lib/python2.7/site-packages
 export PYTHONPATH=%{buildroot}/%{_prefix}/lib/python2.7/site-packages
-PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade cwlref-runner==%{version}
+PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade cwltool==%{version} cwlref-runner
 # ruamel.yaml change below was added to fix issue where ruamel.yaml wouldn't import
 touch $PYTHONPATH/ruamel/__init__.py
 #(this should not need to be changed)
