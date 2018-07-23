@@ -63,7 +63,7 @@ Prefix: %{_prefix}
 %define compiler %( if [[ %{getenv:TYPE} == "Comp" || %{getenv:TYPE} == "MPI" ]]; then if [[ -n "%{getenv:FASRCSW_COMPS}" ]]; then echo "%{getenv:FASRCSW_COMPS}"; fi; else echo "system"; fi)
 %define mpi %(if [[ %{getenv:TYPE} == "MPI" ]]; then if [[ -n "%{getenv:FASRCSW_MPIS}" ]]; then echo "%{getenv:FASRCSW_MPIS}"; fi; else echo ""; fi)
 %define builddependencies python/2.7.11-fasrc01 
-%define rundependencies %{builddependencies}
+%define rundependencies %{builddependencies} node/8.11.3-gcb01
 %define buildcomments %{nil}
 %define requestor %{nil}
 %define requestref %{nil}
@@ -134,8 +134,9 @@ echo %{buildroot} | grep -q %{name}-%{version} && rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_prefix}
 mkdir -p %{buildroot}/%{_prefix}/lib/python2.7/site-packages
 export PYTHONPATH=%{buildroot}/%{_prefix}/lib/python2.7/site-packages
-# ruamel.yaml change below was added to fix issue where ruamel.yaml 0.12.4 wouldn't import
-PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade 'ruamel.yaml>0.12.4,<0.15' cwlref-runner==%{version}
+PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade cwltool==%{version} cwlref-runner
+# ruamel.yaml change below was added to fix issue where ruamel.yaml wouldn't import
+touch $PYTHONPATH/ruamel/__init__.py
 #(this should not need to be changed)
 #these files are nice to have; %%doc is not as prefix-friendly as I would like
 #if there are other files not installed by make install, add them here
