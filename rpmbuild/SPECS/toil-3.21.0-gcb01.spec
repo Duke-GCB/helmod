@@ -62,7 +62,7 @@ Prefix: %{_prefix}
 %define buildhostversion 1
 %define compiler %( if [[ %{getenv:TYPE} == "Comp" || %{getenv:TYPE} == "MPI" ]]; then if [[ -n "%{getenv:FASRCSW_COMPS}" ]]; then echo "%{getenv:FASRCSW_COMPS}"; fi; else echo "system"; fi)
 %define mpi %(if [[ %{getenv:TYPE} == "MPI" ]]; then if [[ -n "%{getenv:FASRCSW_MPIS}" ]]; then echo "%{getenv:FASRCSW_MPIS}"; fi; else echo ""; fi)
-%define builddependencies Anaconda3/5.0.1-gcb01
+%define builddependencies python-3.7.4-gcb01
 %define rundependencies %{builddependencies} node/8.11.3-gcb01
 %define buildcomments %{nil}
 %define requestor %{nil}
