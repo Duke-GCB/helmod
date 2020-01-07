@@ -134,7 +134,7 @@ echo %{buildroot} | grep -q %{name}-%{version} && rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_prefix}
 mkdir -p %{buildroot}/%{_prefix}/lib/python3.6/site-packages
 export PYTHONPATH=%{buildroot}/%{_prefix}/lib/python3.6/site-packages
-PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade toil==%{version}
+PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade toil[cwl]==%{version}
 #(this should not need to be changed)
 #these files are nice to have; %%doc is not as prefix-friendly as I would like
 #if there are other files not installed by make install, add them here
