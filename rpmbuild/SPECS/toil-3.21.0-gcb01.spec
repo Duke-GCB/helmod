@@ -132,8 +132,8 @@ umask 022
 cd "$FASRCSW_DEV"/rpmbuild/BUILD/%{name}-%{version}
 echo %{buildroot} | grep -q %{name}-%{version} && rm -rf %{buildroot}
 mkdir -p %{buildroot}/%{_prefix}
-mkdir -p %{buildroot}/%{_prefix}/lib/python3.6/site-packages
-export PYTHONPATH=%{buildroot}/%{_prefix}/lib/python3.6/site-packages
+mkdir -p %{buildroot}/%{_prefix}/lib/python3.7/site-packages
+export PYTHONPATH=%{buildroot}/%{_prefix}/lib/python3.7/site-packages
 PYTHONUSERBASE=%{buildroot}/%{_prefix} pip install --user --upgrade toil[cwl]==%{version}
 #(this should not need to be changed)
 #these files are nice to have; %%doc is not as prefix-friendly as I would like
@@ -237,7 +237,7 @@ prepend_path("LIBRARY_PATH",        "%{_prefix}/lib")
 --prepend_path("PATH",                "%{_prefix}/sbin")
 --prepend_path("INFOPATH",            "%{_prefix}/share/info")
 --prepend_path("MANPATH",             "%{_prefix}/share/man")
-prepend_path("PYTHONPATH",          "%{_prefix}/lib/python3.6/site-packages")
+prepend_path("PYTHONPATH",          "%{_prefix}/lib/python3.7/site-packages")
 EOF
 
 #------------------- App data file
