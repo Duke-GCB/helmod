@@ -225,7 +225,6 @@ end
 --setenv("TEMPLATE_HOME",       "%{_prefix}")
 
 prepend_path("PATH",                "%{_prefix}/bin")
-prepend_path("PATH",                "%{_prefix}/scripts")
 --prepend_path("CPATH",               "%{_prefix}/include")
 --prepend_path("FPATH",               "%{_prefix}/include")
 --prepend_path("INFOPATH",            "%{_prefix}/info")
