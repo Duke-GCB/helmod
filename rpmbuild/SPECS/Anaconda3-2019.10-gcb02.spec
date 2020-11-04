@@ -164,7 +164,7 @@ bash %{_topdir}/SOURCES/%{name}-%{version}-Linux-x86_64.sh -b -p "%{_prefix}"/x
 
 # Remove hdf5 so that a local version can be created when needed.
 # Remove Qt* and gstreamer* to permit rpm build (reduce # packaged files)
-for pkg in hdf5 Qt* ; do
+for pkg in hdf5 beautifulsoup4 Qt* ; do
    %{_prefix}/x/bin/conda remove --yes $pkg
 done
 
